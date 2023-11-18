@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
                         <i className="fa-solid fa-bars" onClick={handleToggle}></i>
                     </div>
                 </div>
-                <div className={"link-div" + (isToggled ? " hidden" : "")}>
+                <div className={"link-div" + (isToggled ? "" : " hidden")}>
                     <div className="nav-link"><a href="/about">About</a></div>
                     <div className="nav-link"><a href="/pricing">Pricing</a></div>
                     <div className="nav-link"><a href="/showcase">Showcase</a></div>
