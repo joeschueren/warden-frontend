@@ -1,0 +1,80 @@
+@import "../../globals.css";
+
+.booking-div{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    padding: 4%;
+    padding-top: 2%;
+    background: linear-gradient(77deg, rgba(151,53,196,0.2) 37%, rgba(180,53,196,0.2) 100%);
+    margin: auto;
+    margin-bottom: 7%;
+}
+
+.highlight{
+    color: var(--main-color);
+}
+
+.booking-text{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    padding-bottom: 2%;
+}
+
+.booking-input{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 3%;
+    width: 30%;
+}
+
+.booking-button{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 600;
+}
+
+.booking-form-div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.booking-form{
+    display: flex;
+    flex-direction: row;
+    padding-right: 10%;
+}
+
+.booking-cta{
+    width: 50%;
+}
+
+@media(max-width: 767px){
+    .booking-div{
+        flex-direction: column;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+
+    .booking-cta{
+        padding-bottom: 12%;
+        text-align: center;
+    }
+
+    .booking-form-div, .booking-cta{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .booking-form{
+        justify-content: space-evenly;
+        padding-right: 0px;
+    }
+
+
+}

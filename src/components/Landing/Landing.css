@@ -60,6 +60,7 @@
 
     .landing-div{
         flex-direction: column;
+        padding-bottom: 0px;
     }
     .image-container, .text-div{
         width: 80%;
