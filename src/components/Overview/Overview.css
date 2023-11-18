@@ -1,0 +1,93 @@
+@import "../../globals.css";
+
+p{
+    color: black !important;
+}
+
+.container{
+    background-color: white;
+}
+
+.overview-div{
+    text-align: center;
+}
+
+.text-container{
+    padding-top: 7%;
+    width: 75%;
+    margin: auto;
+}
+
+.overview-text{
+    font-size: clamp(1.25rem, 4.5vw, 2.5rem);
+}
+
+.over-subtext{
+    font-size: clamp(1rem, 2.25vw, 1.75rem)
+}
+
+.overview-cards{
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 10%;
+    padding-top: 5%;
+}
+
+.card-icon{
+    width: 50px;
+    padding: 10%;
+}
+
+.purple{
+    border-color: #af70a6 !important;
+    color: #af70a6 !important;
+}
+
+.orange{
+    border-color: #f6af6e !important;
+    color: #f6af6e !important;
+}
+
+.blue{
+    border-color: #4287f5 !important;
+    color: #4287f5 !important;
+}
+
+.green{
+    border-color: #f159a7 !important;
+    color: #f159a7 !important;
+}
+
+
+
+.overview-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    max-width: 300px;
+    border-radius: 10px;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    border: 2px solid;
+}
+
+.card-text{
+    font-size: clamp(.85rem, 3.5vw, 1.5rem);
+}
+
+@media(max-width: 767px){
+    .overview-cards{
+        flex-direction: column;
+    }
+
+    .overview-card{
+        width: 80%;
+        margin: auto;
+        margin-bottom: 5%;
+    }
+}
+

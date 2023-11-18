@@ -11,12 +11,8 @@ const Landing: React.FC = () => {
                     <p data-testid="landing-subtext" className="landing-subtext">
                         Monitor, plan, and fine tune your finances.
                     </p>
-                    <span className="link-highlight">
-                        <a id="highlight-anchor"href="/register">Free Sign Up</a>
-                    </span>
-                    <span className="secondary-anchor">
-                        <a id="secondary-anchor" href="/book">Book a Demo</a>
-                    </span>
+                    <a className="link-highlight" href="/register">Free Sign Up</a>
+                    <a className="secondary-anchor" href="/book">Book a Demo</a>
                 </div>
                 <div className="image-container">
                     <img className="landing-image" src="landing-image.svg" alt="finance diagram webpage"></img>

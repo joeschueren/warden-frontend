@@ -1,7 +1,5 @@
 @import "../../globals.css";
 
-
-
 .container{
     background: linear-gradient(77deg, rgba(151,53,196,0.2) 37%, rgba(180,53,196,0.2) 100%);
 }
@@ -55,9 +53,6 @@
     padding: 10px 18px;
     border-radius: 25px;
     margin-left: 5%;
-}
-
-#secondary-anchor{
     color: var(--main-color);
 }
 

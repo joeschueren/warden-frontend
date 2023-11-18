@@ -20,6 +20,7 @@
 a{
     text-decoration: none;
     color: black;
+    box-sizing: border-box;
 }
 
 .title-text{
@@ -47,6 +48,7 @@ a{
     color: white;
     padding: 10px 18px;
     border-radius: 25px;
+    width: auto;
 }
 
 #highlight-anchor{
@@ -92,6 +94,12 @@ a{
     .nav-link-highlight{
         padding: 1rem;
         padding-left: 1rem;
+    }
+
+    .highlight-div{
+        padding: 1.5rem;
+        padding-left: .75rem;
+        max-height: 40px
     }
 
     .link-div{

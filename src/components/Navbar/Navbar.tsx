@@ -13,23 +13,21 @@ const Navbar: React.FC = () => {
                 <div className="nav-title">
                     <span data-testid="title" className="title-text">Warden</span>
                     <div className="toggle-button">
-                        <i className="fa-solid fa-bars" onClick={handleToggle}></i>
+                        <i className="fa-solid fa-bars fa-lg" onClick={handleToggle}></i>
                     </div>
                 </div>
                 <div className={"link-div" + (isToggled ? "" : " hidden")}>
-                    <div className="nav-link"><a href="/about">About</a></div>
-                    <div className="nav-link"><a href="/pricing">Pricing</a></div>
-                    <div className="nav-link"><a href="/showcase">Showcase</a></div>
-                    <div className="nav-link"><a href="/book">Book an Appointment</a></div>
-                    <div className="nav-link"><a href="/signin">Sign In</a></div>
-                    <div className="nav-link-highlight">
-                        <span className="link-highlight">
-                            <a id="highlight-anchor"href="/register">Sign Up</a>
-                        </span>
+                    <a className="nav-link" href="/about">About</a>
+                    <a className="nav-link" href="/pricing">Pricing</a>
+                    <a className="nav-link" href="/showcase">Showcase</a>
+                    <a className="nav-link" href="/book">Book an Appointment</a>
+                    <a className="nav-link" href="/signin">Sign In</a>
+                    <div className="highlight-div">
+                        <a className="link-highlight" href="/register">Sign Up</a>
+                    </div>
                     </div>
                 </div>
-            </div>
-        </div>)
+            </div>)
 }
 
 export default Navbar;
