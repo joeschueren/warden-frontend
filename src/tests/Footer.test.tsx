@@ -8,13 +8,13 @@ test("The footer is being rendered", (): void =>{
     expect(footerElement).toBeInTheDocument();
 });
 
-test("All links are being rendered", () => {
+test("All links are being rendered", ():void => {
     render(<Footer/>);
     const linkElements: HTMLElement[] = screen.getAllByRole("link");
     expect(linkElements.length).toBe(17);
 })
 
-test("Copyright section is being rendered", () => {
+test("Copyright section is being rendered", ():void => {
     render(<Footer/>);
     const copyrightElement: HTMLElement = screen.getByTestId("copyright")
     const copyrightChildren: HTMLCollection = copyrightElement.children
