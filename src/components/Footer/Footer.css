@@ -1,0 +1,75 @@
+@import "../../globals.css";
+
+.footer-container{
+    padding: 5%;
+    background-color: #fafafc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.heading-text{
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.footer-heading{
+    padding-right: 5%;
+}
+
+.footer-about, .footer-login{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    padding-top: 0px;
+}
+
+.section-title{
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.footer-link{
+    margin-bottom: 1.5rem;
+}
+
+.login-container{
+    padding: 5%;
+    padding-bottom: 0px;
+}
+
+.footer-login{
+    border-left: 1px solid black;
+}
+
+.fa-brands{
+    padding-right: 20px;
+}
+
+.copyright{
+    text-align: center;
+}
+
+@media(max-width: 1024px){
+    .footer-container{
+        flex-basis: 50%;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-heading{
+        padding-right: 0px;
+        padding-bottom: 5%;
+        flex-basis: 100%;
+    }
+
+    .footer-login{
+        border: none;
+    }
+
+    .fa-brands{
+        padding: 10px;
+    }
+}

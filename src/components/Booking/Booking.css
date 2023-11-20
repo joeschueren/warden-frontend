@@ -3,7 +3,7 @@
 .booking-div{
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 85%;
     padding: 4%;
     padding-top: 2%;
     background: linear-gradient(77deg, rgba(151,53,196,0.2) 37%, rgba(180,53,196,0.2) 100%);
