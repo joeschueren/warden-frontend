@@ -22,7 +22,7 @@ const Desc: React.FC = () => {
                 <img className="img-element" src="team.svg"></img>
             </div>
             <div className="item-text">
-                <div className="item-heading">Get Help From Warden</div>
+                <div className="item-heading">Let Warden Help You</div>
                 <div className="item-subtext">
                     Warden Finance is an assistant that helps you manage your budget 
                     <div className="item-button">
