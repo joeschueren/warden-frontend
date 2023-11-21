@@ -11,7 +11,8 @@ const Navbar: React.FC = () => {
     return(<div>
             <div data-testid="navbar" className="nav-div">
                 <div className="nav-title">
-                    <span data-testid="title" className="title-text">Warden</span>
+                    <span data-testid="title" className="title-text">warden</span>
+                    <img className="logo" src="logo.png"></img>
                     <div className="toggle-button">
                         <i className="fa-solid fa-bars fa-lg" onClick={handleToggle}></i>
                     </div>

@@ -6,7 +6,10 @@ const Footer: React.FC = () =>{
     <div>
         <div data-testid="footer" className="footer-container">
             <div className="footer-heading">
-                <span className="heading-text">Warden</span>
+                <div className="logo-container">
+                    <span className="heading-text">warden</span>
+                    <img className="logo" src="logo.png"></img>
+                </div>
             </div>
             <div className="footer-about">
                 <span className="section-title">Company</span>
