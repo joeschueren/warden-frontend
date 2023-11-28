@@ -1,0 +1,17 @@
+@import "../../globals.css";
+
+.dashboard-container{
+    background: linear-gradient(151deg, rgba(151,53,196,1) 4%, rgba(239,214,243,1) 100%);
+    height: calc(100vh - 65px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard{
+    background-color: white;
+    box-shadow: .5px 1px 3px #888888;
+    border-radius: 25px;
+    height: calc(100% - 50px);
+    width: calc(100% - 50px);
+}
