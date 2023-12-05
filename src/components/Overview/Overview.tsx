@@ -2,7 +2,7 @@ import React from "react";
 import "./Overview.css";
 
 const Overview: React.FC = () =>{
-    return(<div className="overview-container">
+    return(<div>
         <div className="overview-div">
             <div className="text-container">
                 <p data-testid="header" className="overview-text">Invest. Manage. Profit.</p>

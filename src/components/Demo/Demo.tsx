@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./Login.css";
+import "../Login/Login.css";
 
 const Login: React.FC = () => {
     const [message, setMessage]: [string, Function] = useState("\u00A0");
@@ -52,12 +52,11 @@ const Login: React.FC = () => {
             <p>Don't have an account? <a className="switch-form" href="/register">Register</a></p>
             <form method="POST" className="form" onSubmit={handleSubmit}>
                 <span className="input-label">Email</span>
-                <input type="email" className="form-input" placeholder="Email" name="email"></input>
+                <input type="email" className="form-input" placeholder="Email" name="email" value="demo@gmail.com"></input>
                 <span className="input-label">Password</span>
-                <input type="password" className="form-input" placeholder="Password" name="password"></input>
+                <input type="password" className="form-input" placeholder="Password" name="password" value="Demo12345"></input>
                 <p className="warning">{message}</p>
                 <button type="submit" className="form-button">Log In</button>
-                <a href="/demo" style={{margin: "auto", textDecoration: "underline"}}>Use Demo</a>
             </form>
         </div>
     </div>)

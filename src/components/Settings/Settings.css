@@ -1,0 +1,113 @@
+@import "../../globals.css";
+
+.settings-container{
+    min-height: calc(100vh - 65px);
+    background: linear-gradient(151deg, rgba(151,53,196,1) 4%, rgba(239,214,243,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: 50%;
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+.settings-header, .settings-title{
+    margin: 25px 10%;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.settings-title{
+    color: var(--main-color) !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+}
+
+.settings-div{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0px;
+}
+
+.settings-form{
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-update{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40%;
+    height: 60%;
+    padding: 25px;
+    padding-top: 0px;
+}
+
+.picture-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.file-input{
+    margin-bottom: 25px;
+    width: 70%;
+}
+
+.no-image{
+    width: 150px;
+    height: 150px;
+}
+
+input::file-selector-button{
+    background-color: var(--main-color);
+    color: white;
+    box-shadow: none;
+    border: none;
+    padding: 5px;
+}
+
+input::file-selector-button:hover{
+    cursor: pointer;
+    opacity: 50%;
+}
+
+.demo-picture{
+    margin-bottom: 25px;
+    border-radius: 50%;
+    height: 150px;
+    box-shadow: .5px 1px 3px #888888;
+}
+
+@media(max-width: 767px){
+    .settings-form{
+        flex-direction: column;
+    }
+
+    .settings-div{
+        width: 95%;
+        max-width: 400px;
+    }
+
+    .profile-update{
+        width: auto;
+    }
+
+
+}

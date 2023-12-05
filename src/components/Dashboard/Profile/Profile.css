@@ -1,0 +1,48 @@
+@import "../../../globals.css";
+
+.profile-container{
+    width: 23.75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    font-weight: 600;
+    border-radius: 25px;
+    box-shadow: .5px 1px 3px #888888;
+    padding: 2% 0px;
+    margin-top: 25px;
+}
+
+.profile-picture{
+    width: 40%;
+    border-radius: 50%;
+    box-shadow: .5px 1px 3px #888888;
+}
+
+.logout{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f52020;
+}
+
+.logout:hover{
+    cursor: pointer;
+}
+
+.settings{
+    text-decoration: underline;
+}
+
+@media(max-width: 1024px){
+    .profile-container{
+        width: 46%;
+    }
+}
+
+@media(max-width: 670px){
+    .profile-container{
+        width: 90%;
+        padding: 25px 0px;
+    }
+}

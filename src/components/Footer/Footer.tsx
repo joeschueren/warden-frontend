@@ -20,21 +20,21 @@ const Footer: React.FC = () =>{
             </div>
             <div className="footer-about">
                 <span className="section-title">Product</span>
-                <a href=""className="footer-link">Pricing</a>
-                <a href="" className="footer-link">Demo</a>
-                <a href="" className="footer-link">Trial</a>
+                <a href="/dashboard"className="footer-link">Pricing</a>
+                <a href="/demo" className="footer-link">Demo</a>
+                <a href="/dashboard" className="footer-link">Trial</a>
             </div>
             <div className="footer-about">
                 <span className="section-title">Community</span>
                 <a href="" className="footer-link">Customers</a>
-                <a href="" className="footer-link">Book a Demo</a>
-                <a href="" className="footer-link">Contact Us</a>
-                <a href="" className="footer-link">Help</a>
+                <a href="/dashboard" className="footer-link">Book a Demo</a>
+                <a href="/dashboard" className="footer-link">Contact Us</a>
+                <a href="/dashboard" className="footer-link">Help</a>
             </div>
             <div className="footer-login">
-                    <a href="" className="footer-link">Try Now</a>
-                    <a href="" className="footer-link">Sign In</a>
-                    <a href="" className="footer-link">Register</a>
+                    <a href="/demo" className="footer-link">Try Now</a>
+                    <a href="/login" className="footer-link">Sign In</a>
+                    <a href="/register" className="footer-link">Register</a>
                     <div className="socials-container">
                         <a href=""><i className="fa-brands fa-linkedin-in"></i></a>
                         <a href=""><i className="fa-brands fa-twitter"></i></a>

@@ -2,16 +2,269 @@
 
 .dashboard-container{
     background: linear-gradient(151deg, rgba(151,53,196,1) 4%, rgba(239,214,243,1) 100%);
-    height: calc(100vh - 65px);
+    min-height: calc(100vh - 65px);
     display: flex;
-    align-items: center;
     justify-content: center;
+    padding-bottom: 25px;
 }
 
 .dashboard{
+    height: calc(100% - 50px);
+    width: calc(100% - 50px);
+}
+
+.row, .form-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Overview */
+
+.overview{
+    width: 48.5%;
+    background-color: white;
+    margin-top: 25px;
+    border-radius: 25px;
+    box-shadow: .5px 1px 3px #888888;
+}
+
+.header, .form-header{
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-left: 10%;
+}
+
+.overview-container{
+    padding: 4%;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.overview-key{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 4%;
+    width: 40%;
+    max-height: 350px;
+}
+
+.overview-chart{
+    width: 50%;
+}
+
+.key{
+    background-color: white !important;
+}
+
+.monthly-overview{
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 4%;
+}
+
+.overview-percent{
+    color: black;
+}
+
+/* Budgets */
+
+.budgets-container{
+    width: 48.5%;
+    min-height: 25vw;
+    margin-top: 25px;
     background-color: white;
     box-shadow: .5px 1px 3px #888888;
     border-radius: 25px;
-    height: calc(100% - 50px);
-    width: calc(100% - 50px);
+    padding-bottom: 2%;
+}
+
+.budgets{
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.budget-graphs{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.budget{
+    height: 100%;
+    border-radius: 25px;
+    margin-right: auto;
+    z-index: 2;
+}
+
+.budget-text{
+    width: 50%;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.budget-paragraph{
+    width: 75%;
+    margin: auto;
+}
+
+.budget-button{
+    width: clamp(125px, 65%, 250px);
+    padding: 8px 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--main-color);
+    border-radius: 25px;
+    margin: 25px 0px;
+}
+
+.budget-background{
+    width: 90%;
+    background-color: #e8e7e6;
+    height: 15px;
+    border-radius: 25px;
+}
+
+.bar-title{
+    font-size: 14px;
+    font-weight: 500;
+    width: 87%;
+}
+
+.input-row{
+    width: 50%;
+}
+
+.food{
+    color: #3498db;
+    background-color: #3498db;
+}
+
+.bills{
+    color: #e74c3c;
+    background-color: #e74c3c;
+}
+
+.entertainment{
+    color: #2ecc71;
+    background-color: #2ecc71;
+}
+
+.transportation{
+    color: #f39c12;
+    background-color: #f39c12;
+}
+
+.personal{
+    color: #9b59b6;
+    background-color: #9b59b6;
+}
+
+.shopping{
+    color: #16a085;
+    background-color: #16a085;
+}
+
+.other{
+    color: #e67e22;
+    background-color: #e67e22;
+}
+
+@media(min-width: 1600px){
+    .budget-text{
+        padding: 8% 0px;
+    }
+}
+
+@media(max-width: 1024px){
+    .row{
+        flex-direction: column;
+    }
+
+    .dashboard{
+        width: 90%;
+    }
+
+    .overview{
+        width: 90%;
+        margin: 25px auto;
+        padding: 20px;
+    }
+
+    .budgets-container{
+        width: 90%;
+        margin: 25px auto;
+        padding: 20px;
+    }
+
+    .budget-graphs{
+        min-height: 325px;
+    }
+}
+
+@media(max-width: 767px){
+    .overview-container{
+        flex-direction: column;
+    }
+
+    .overview-chart, .overview-key{
+        width: 100%;
+    }
+
+    .overview-chart{
+        display: flex;
+        justify-content: center;
+    }
+
+    .overview-key{
+        margin: auto;
+        width: 200px;
+        padding: 0px;
+        padding-top: 25px;
+    }
+
+    .overview-chart{
+        min-height: 300px
+    }
+    .overview-key{
+        min-height: 300px;
+    }
+
+    .budgets{
+        flex-direction: column;
+    }
+
+    .budget-text{
+        width: 85%;
+        margin: auto;
+    }
+
+    .budget-button{
+        width: 60%;
+    }
+
+    .budget-graphs{
+        margin: auto;
+        min-width: clamp(300px, 70%, 700px);
+    }
+
+    .form-row{
+        flex-direction: row !important;
+        flex-wrap: wrap;
+    }
 }

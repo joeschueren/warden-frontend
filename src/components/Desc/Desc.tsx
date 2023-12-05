@@ -9,7 +9,7 @@ const Desc: React.FC = () => {
                 <div className="item-subtext">
                     With Warden Finance you can watch your finances grow live on our dashboard.
                     <div className="item-button">
-                        <a href="" className="item-link">View Live</a>
+                        <a href="/dashboard" className="item-link">View Live</a>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@ const Desc: React.FC = () => {
                 <div className="item-subtext">
                     Warden Finance is an assistant that helps you manage your budget 
                     <div className="item-button">
-                        <a href="" className="item-link">Dashboard</a>
+                        <a href="/dashboard" className="item-link">Dashboard</a>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@ const Desc: React.FC = () => {
                 <div className="item-subtext">
                     Join Warden to Take Control Over your Finances
                     <div className="item-button">
-                        <a href="" className="item-link">Join Now</a>
+                        <a href="/dashboard" className="item-link">Join Now</a>
                     </div>
                 </div>
             </div>

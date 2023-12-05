@@ -1,0 +1,95 @@
+@import "../../../globals.css";
+
+.transaction-container{
+    width: 23.75%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: .5px 1px 3px #888888;
+    margin-top: 25px;
+}
+
+.form-header{
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.hidden-text{
+    display: none;
+}
+
+.transaction-body{
+    padding: 10%;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.income-text{
+    margin-top: 0px;
+}
+
+.category{
+    margin-bottom: 25px;
+    border-radius: 5px;
+    padding: 5px 6px;
+    width: 50%;
+}
+
+.amount{
+    width: 75%;
+    padding: 4px 6px;
+    margin-bottom: 6%;
+
+}
+
+.select-title{
+    margin-top: 0px;
+}
+
+.transaction-btn{
+    width: 150px;
+    padding: 8px 10px;
+    background-color: var(--main-color);
+    color: white;
+    margin-right: auto;
+    margin-top: 15px;
+    border: 0px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+@media(min-width: 1600px){
+    .transaction-body{
+        min-height: 275px
+    }
+
+    .hidden-text{
+        display: block
+    }
+}
+
+@media(max-width: 1315px){
+    .category{
+        width: 79.5%;
+    }
+}
+
+@media(max-width: 1024px){
+    .transaction-container{
+        width: 46%;
+        margin-top: 25px;
+    }
+}
+
+@media(max-width: 670px){
+    .transaction-container{
+        width: 90%;
+        margin-top: 25px;
+    }
+}

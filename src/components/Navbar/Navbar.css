@@ -1,5 +1,9 @@
 @import "../../globals.css";
 
+.navbar{
+    max-width: 1600px;
+}
+
 .nav-div{
     display: flex;
     align-items: center;
@@ -33,7 +37,7 @@ a{
 
 .title-text{
     color: black;
-    padding-left: 15%;
+    margin-left: 2.5vw;
 }
 
 .link-div{
@@ -68,6 +72,41 @@ a{
     display: none;
 }
 
+.nav-auth{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.nav-email{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.email-text{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.nav-profile{
+    margin-left: 20px;
+}
+
+.profile-pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: .5px 1px 3px #888888;
+    margin-left: 25px;
+}
+
+.nav-signin{
+    margin-left: 25px;
+}
+
 @media(max-width: 1400px){
     .link-div{
         padding-left: 0%;
@@ -82,7 +121,7 @@ a{
     .nav-title{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
         width: 100%;
         min-height: 65px;
@@ -130,5 +169,13 @@ a{
 
     .link-div{
         z-index: 1;
+    }
+    
+    .nav-auth{
+        flex-direction: column;
+    }
+
+    .nav-signin{
+        margin: 0px;
     }
 }

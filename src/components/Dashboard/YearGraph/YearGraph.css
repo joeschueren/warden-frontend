@@ -1,0 +1,55 @@
+@import "../../../globals.css";
+
+.year-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 48.5%;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: .5px 1px 3px #888888;
+    margin-top: 25px;
+}
+
+.overview{
+    width: 48.5%;
+    background-color: white;
+    margin-top: 25px;
+    border-radius: 25px;
+    box-shadow: .5px 1px 3px #888888;
+}
+
+.graph-container{
+    width: 90%;
+}
+
+.transaction-body{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media(min-width: 1600px){
+    .year-container{
+        padding: 25px 0px;
+    }
+}
+
+@media(max-width: 767px){
+    .year-container{
+        width: 100%;
+        height: 225px;
+    }
+}
+
+@media(max-width: 1024px){
+    .year-container{
+        width: calc(90% + 40px);
+        margin: auto;
+        margin-top: 25px;
+        height: 40vw;
+        padding: 25px 0px;
+    }
+}
