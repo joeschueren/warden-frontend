@@ -90,8 +90,8 @@ const Settings: React.FC = () => {
 
     function submitIncome(e: any){
       const amount = e.target.income.value;
-      
-      fetch("https://warden-backend.onrender.com", {
+
+      fetch("https://warden-backend.onrender.com/max-budget", {
         method: "POST",
         credentials: "include",
         headers: {
