@@ -119,7 +119,7 @@ const Settings: React.FC = () => {
                 <p className="income-header">Update Income</p>
                 <p className="income-text">Update your current income or goals</p>
                 <div>
-                  $ <input className="budget-input" type="number" step=".01" placeholder="Income" name="income" value=""></input>
+                  $ <input className="budget-input" type="number" step=".01" placeholder="Income" name="income"></input>
                 </div>
                 <button type="submit" className="confirm-button update-button">Save Changes</button>
               </form>

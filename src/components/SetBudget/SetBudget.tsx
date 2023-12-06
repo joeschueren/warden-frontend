@@ -70,19 +70,19 @@ const SetBudget: React.FC = () =>{
         <form onSubmit={handleSubmit}>
             <p className="budget-title">Update Budgets</p>
             <p className="category-title">Food & Dining</p>
-            $ <input className="budget-input" type="number" step=".01" name="food" placeholder="Food & Dining" value={currentData[0]}></input>
+            $ <input className="budget-input" type="number" step=".01" name="food" placeholder="Food & Dining" defaultValue={currentData[0]}></input>
             <p className="category-title">Bills & Utilities</p>
-            $ <input className="budget-input" type="number" step=".01" name="bills" placeholder="Bills & Utilities" value={currentData[1]}></input>
+            $ <input className="budget-input" type="number" step=".01" name="bills" placeholder="Bills & Utilities" defaultValue={currentData[1]}></input>
             <p className="category-title">Entertainment</p>
-            $ <input className="budget-input" type="number" step=".01" name="entertainment" placeholder="Entertainment" value={currentData[2]}></input>
+            $ <input className="budget-input" type="number" step=".01" name="entertainment" placeholder="Entertainment" defaultValue={currentData[2]}></input>
             <p className="category-title">Tranportation</p>
-            $ <input className="budget-input" type="number" step=".01" name="transportation" placeholder="Transportation" value={currentData[3]}></input>
+            $ <input className="budget-input" type="number" step=".01" name="transportation" placeholder="Transportation" defaultValue={currentData[3]}></input>
             <p className="category-title">Personal Care</p>
-            $ <input className="budget-input" type="number" step=".01" name="personal" placeholder="Personal Care" value={currentData[4]}></input>
+            $ <input className="budget-input" type="number" step=".01" name="personal" placeholder="Personal Care" defaultValue={currentData[4]}></input>
             <p className="category-title">Shopping</p>
-            $ <input className="budget-input" type="number" step=".01" name="shopping" placeholder="Shopping" value={currentData[5]}></input>
+            $ <input className="budget-input" type="number" step=".01" name="shopping" placeholder="Shopping" defaultValue={currentData[5]}></input>
             <p className="category-title">Other</p>
-            $ <input className="budget-input" type="number" step=".01" name="other" placeholder="Other" value={currentData[6]}></input>
+            $ <input className="budget-input" type="number" step=".01" name="other" placeholder="Other" defaultValue={currentData[6]}></input>
             <button className="confirm-button" style={{marginTop: "30px"}} type="submit">Save Changes</button>
         </form>
     </div>);
