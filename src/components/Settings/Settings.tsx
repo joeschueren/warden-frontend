@@ -88,6 +88,17 @@ const Settings: React.FC = () => {
         }
     }
 
+    async function submitIncome(e: any){
+      fetch("https://warden-backend.onrender.com/max-budget", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(e.target.income.value)
+      }).catch(err => console.log(err));
+    }
+
 
     return(<div className="settings-container">
       <div className="settings-div">
@@ -95,10 +106,18 @@ const Settings: React.FC = () => {
           <div className="settings-form">
             <div className="profile-update">
               <div className="picture-container">
-                <p className="settings-header">Update Picture</p>
+                <p className="settings-header income-header">Update Picture</p>
                 {fileData ? <img className="demo-picture" src={URL.createObjectURL(fileData)} alt="Processed Image" /> : <div className="no-image demo-picture"></div>}
                 <input className="file-input" type="file" onChange={handleUpload} name="picture"></input>
                 <button className="confirm-button" onClick={submitChanges}>Save Changes</button>
+              </div>
+              <div className="update-income">
+                <p className="income-header">Update Income</p>
+                <p className="income-text">Update your current income or goals</p>
+                <div>
+                  $ <input className="budget-input" placeholder="Income" name="income"></input>
+                </div>
+                <button className="confirm-button update-button" onClick={submitIncome}>Save Changes</button>
               </div>
             </div>
             <div className="set-budget">

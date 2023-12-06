@@ -72,7 +72,7 @@ const SetBudget: React.FC = () =>{
             <p className="category-title">Food & Dining</p>
             $ <input className="budget-input" type="number" step=".01" name="food" placeholder="Food & Dining" value={currentData[0]}></input>
             <p className="category-title">Bills & Utilities</p>
-            $ <input  className="budget-input" type="number" step=".01" name="bills" placeholder="Bills & Utilities" value={currentData[1]}></input>
+            $ <input className="budget-input" type="number" step=".01" name="bills" placeholder="Bills & Utilities" value={currentData[1]}></input>
             <p className="category-title">Entertainment</p>
             $ <input className="budget-input" type="number" step=".01" name="entertainment" placeholder="Entertainment" value={currentData[2]}></input>
             <p className="category-title">Tranportation</p>

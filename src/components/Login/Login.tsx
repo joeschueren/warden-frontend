@@ -26,12 +26,8 @@ const Login: React.FC = () => {
                     event.target.email.password = "";
                 }
                 else if(res.status === 200){
-                    return res.json()
+                    window.location.href="/dashboard";
                 }
-            })
-            .then(data => {
-                console.log(data.headers)
-                console.log(data);
             })
         }
         catch(error){

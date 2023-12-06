@@ -21,8 +21,6 @@ input:hover{
 .settings-header, .settings-title{
     margin: 25px 10%;
     margin-top: 20px;
-    font-weight: 500;
-    font-size: 1.25rem;
 }
 
 .settings-title{
@@ -37,6 +35,7 @@ input:hover{
     display: flex;
     flex-direction: column;
     margin: 50px 0px;
+    max-width: 800px;
 }
 
 .settings-form{
@@ -67,7 +66,7 @@ input:hover{
 
 .file-input{
     margin-bottom: 25px;
-    width: 70%;
+    width: 58%;
 }
 
 .no-image{
@@ -93,6 +92,29 @@ input::file-selector-button:hover{
     border-radius: 50%;
     height: 150px;
     box-shadow: .5px 1px 3px #888888;
+}
+
+.update-income{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    padding: 0px 8%;
+}
+
+.income-text{
+    margin-bottom: 30px;
+    padding: 0px;
+}
+
+.income-header{
+    margin: 25px 0px;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.update-button{
+    margin-top: 25px;
+    width: 100%;
 }
 
 @media(max-width: 767px){
