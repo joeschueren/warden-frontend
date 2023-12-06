@@ -89,17 +89,16 @@ const Settings: React.FC = () => {
     }
 
     function submitIncome(e: any){
-      e.preventDefault();
       const amount = e.target.income.value;
-      if(amount){fetch("https://warden-backend.onrender.com/max-budget", {
-          method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(amount)
-        }).catch(err => console.log(err));
-      }
+      
+      fetch("https://warden-backend.onrender.com", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({amount: amount})
+      }).catch(err => console.log(err))
     }
 
 
