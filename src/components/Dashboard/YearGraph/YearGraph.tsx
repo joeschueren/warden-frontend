@@ -41,7 +41,7 @@ const YearGraph: React.FC<GraphProps> = (props) => {
 
                 let expenseSum = 0;
 
-                for(let i = 2; i< expenses.length - 1; i++){
+                for(let i = 3; i< expenses.length - 1; i++){
                     expenseSum += expenses[i];
                 }
 
@@ -55,7 +55,7 @@ const YearGraph: React.FC<GraphProps> = (props) => {
 
                 let expenseSum = 0;
 
-                for(let i = 2; i< expenses.length - 1; i++){
+                for(let i = 3; i< expenses.length - 1; i++){
                     expenseSum += expenses[i];
                 }
 
