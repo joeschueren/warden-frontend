@@ -32,20 +32,35 @@ const YearGraph: React.FC<GraphProps> = (props) => {
 
         const currentYear = new Date().getFullYear();
         if(year === currentYear){
-            const expenses = Object.values(pastMonths[i])
-            .map(value => parseFloat(value));
+            if(month === new Date().getMonth()){
+                const monthProgress = new Date().getDay() / 30;
+                const expenses = Object.values(pastMonths[i])
+                .map(value => parseFloat(value));
 
-            console.log(JSON.stringify(expenses));
+                console.log(JSON.stringify(expenses));
 
-            let expenseSum = 0;
+                let expenseSum = 0;
 
-            for(let i = 3; i< expenses.length - 1; i++){
-                expenseSum += expenses[i];
+                for(let i = 2; i< expenses.length - 1; i++){
+                    expenseSum += expenses[i];
+                }
+
+                graphData[month-1] = (parseFloat(current.max_budget) * monthProgress) - expenseSum;
             }
+            else{
+                const expenses = Object.values(pastMonths[i])
+                .map(value => parseFloat(value));
 
-            console.log("EXpense Sum: "+expenseSum+" Max_budget: "+parseFloat(current.max_budget))
+                console.log(JSON.stringify(expenses));
 
-            graphData[month-1] = parseFloat(current.max_budget) - expenseSum;
+                let expenseSum = 0;
+
+                for(let i = 2; i< expenses.length - 1; i++){
+                    expenseSum += expenses[i];
+                }
+
+                graphData[month-1] = parseFloat(current.max_budget) - expenseSum;
+            }
             
         }
     }
