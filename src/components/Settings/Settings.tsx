@@ -42,7 +42,7 @@ const Settings: React.FC = () => {
               const canvas = document.createElement('canvas');
               const ctx = canvas.getContext('2d');
     
-              const targetWidth = 250; // Set your desired width
+              const targetWidth = 250;
     
               const aspectRatio = 1 / 1;
               const targetHeight = targetWidth / aspectRatio;
@@ -89,14 +89,18 @@ const Settings: React.FC = () => {
     }
 
     async function submitIncome(e: any){
-      fetch("https://warden-backend.onrender.com/max-budget", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(e.target.income.value)
-      }).catch(err => console.log(err));
+      e.preventDefault();
+      const amount = e.target.income.value;
+      if(amount){
+        fetch("https://warden-backend.onrender.com/max-budget", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(amount)
+        }).catch(err => console.log(err));
+      }
     }
 
 
@@ -111,14 +115,14 @@ const Settings: React.FC = () => {
                 <input className="file-input" type="file" onChange={handleUpload} name="picture"></input>
                 <button className="confirm-button" onClick={submitChanges}>Save Changes</button>
               </div>
-              <div className="update-income">
+              <form className="update-income" onSubmit={submitIncome}>
                 <p className="income-header">Update Income</p>
                 <p className="income-text">Update your current income or goals</p>
                 <div>
-                  $ <input className="budget-input" placeholder="Income" name="income"></input>
+                  $ <input className="budget-input" type="number" step=".01" placeholder="Income" name="income" value=""></input>
                 </div>
-                <button className="confirm-button update-button" onClick={submitIncome}>Save Changes</button>
-              </div>
+                <button type="submit" className="confirm-button update-button">Save Changes</button>
+              </form>
             </div>
             <div className="set-budget">
               <SetBudget/>
