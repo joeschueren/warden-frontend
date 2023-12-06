@@ -1,0 +1,36 @@
+@import "../../globals.css";
+
+.not-found-container{
+    height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(151deg, rgba(151,53,196,1) 4%, rgba(239,214,243,1) 100%);
+}
+
+.not-found{
+    box-shadow: .5px 1px 3px #888888;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 50px;
+}
+
+.not-found-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.four{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin: auto;
+}
+
+.page-not-found{
+    text-align: center;
+}

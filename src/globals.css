@@ -12,3 +12,7 @@ body{
   max-width: 1920px;
   margin: auto;
 }
+
+input{
+  cursor: text !important;
+}

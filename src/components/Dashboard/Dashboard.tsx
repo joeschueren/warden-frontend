@@ -170,7 +170,7 @@ const Dashboard: React.FC<DashProps> = (props) =>{
                         <div className="budget-text">
                             <p className="budget-paragraph">This is how much of your budget you have used for each category.</p>
                             <p className="budget-paragraph">To update your budgets for any of the categories go to the budgets page.</p>
-                            <a className="budget-button" href="/set-budget">Update Budgets</a>
+                            <a className="budget-button" href="/settings">Update Budgets</a>
                         </div>
                     </div>
                 </div>

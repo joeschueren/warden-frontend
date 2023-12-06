@@ -1,12 +1,16 @@
 import Navbar from "./Navbar/Navbar";
 import React, {useState, useEffect} from "react";
+import { inject } from '@vercel/analytics';
 import Home from "./Home/Home";
 import Register from "./Register/Register";
 import Login from "./Login/Login";
 import Dashboard from "./Dashboard/Dashboard";
 import Demo from "./Demo/Demo";
 import Settings from "./Settings/Settings";
+import NotFound from "./NotFound/NotFound";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
+inject();
 
 function App() {
 
@@ -46,6 +50,7 @@ function App() {
           <Route path="/dashboard" Component={() => <Dashboard email={username}/>}/>
           <Route path="/settings" Component={Settings}/>
           <Route path="/demo" Component={Demo}/>
+          <Route path="*" Component={NotFound}/>
         </Routes>
       </Router>
     </div>
