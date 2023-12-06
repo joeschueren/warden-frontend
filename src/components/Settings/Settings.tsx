@@ -88,11 +88,10 @@ const Settings: React.FC = () => {
         }
     }
 
-    async function submitIncome(e: any){
+    function submitIncome(e: any){
       e.preventDefault();
       const amount = e.target.income.value;
-      if(amount){
-        fetch("https://warden-backend.onrender.com/max-budget", {
+      if(amount){fetch("http://192.168.0.238:5000/max-budget", {
           method: "POST",
           credentials: "include",
           headers: {
