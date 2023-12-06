@@ -13,7 +13,7 @@ const Login: React.FC = () => {
 
         try{
             await fetch("https://warden-backend.onrender.com/login",{
-            method: "POST",
+            method: "GET",
             credentials: "include",
             headers: {
                 "Content-Type": "application/json",
