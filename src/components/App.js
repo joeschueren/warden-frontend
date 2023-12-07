@@ -27,8 +27,6 @@ function App() {
       const status = await res.status;
       const data = await res.json();
 
-      console.log("This is supposed to be the picture: "+data.picture);
-
       if(status === 200){
         setUsername(data.email);
         setPicture(data.picture)
