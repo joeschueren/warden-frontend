@@ -42,17 +42,17 @@ const Dashboard: React.FC<DashProps> = (props) =>{
 
     async function getData() {
         try{
-            await fetch("https://warden-backend.onrender.com/dashboard", {
+            const res = await fetch("https://warden-backend.onrender.com/dashboard", {
                 method: "GET",
                 credentials: "include"
-            })
-            .then(res => {
-                if(res.status !== 200){
-                    window.location.href = "/login";
-                }
-                return res.json();
-            })
-            .then(data => setDashData(data));
+            });
+            
+            if(res.status !== 200){
+                window.location.href = "/login";
+            }
+            
+            const data = await res.json();
+            setDashData(data);
         } catch(err) {
             setIsError(true);
         }
@@ -100,7 +100,7 @@ const Dashboard: React.FC<DashProps> = (props) =>{
     console.log(dataSum);
 
     if(isError){
-        return(<Error number="500" message="Error Contacting the Server Try Again"/>)
+        return(<Error number="500" message="Error Contacting the Server Try Again"/>);
     }
     else return( <div>
     <div className="dashboard-container">
