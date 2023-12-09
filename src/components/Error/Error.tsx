@@ -1,15 +1,21 @@
 import React from "react";
-import "./NotFound.css";
+import "./Error.css";
 
-const NotFound: React.FC = () => {
+interface ErrorProps {
+    number: string;
+    message: string
+}
+
+
+const NotFound: React.FC<ErrorProps> = (props) => {
     return(<div className="not-found-container">
         <div className="not-found">
             <div className="not-found-logo">
                 <span className="not-found-title">warden</span>
                 <img className="logo" src="logo.png"></img>
             </div>
-            <div className="four">404</div>
-            <p className="page-not-found">Page Not Found</p>
+            <div className="four">{props.number}</div>
+            <p className="page-not-found">{props.message}</p>
         </div>
     </div>)
 }

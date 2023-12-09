@@ -1,21 +1,34 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ImageCompressor from "image-compressor.js";
 import SetBudget from "../SetBudget/SetBudget";
+import Error from "../Error/Error";
 import "./Settings.css";
 
 const Settings: React.FC = () => {
 
     const [fileData, setFileData]: [Blob | null, any] = useState(null);
+    const [isError, setIsError] = useState(false);
+    
+    async function checkAuth(){
+        try{
+            const res = await fetch("https://warden-backend.onrender.com/check-auth", {
+                method: "GET",
+                credentials: "include"
+            })
 
-    fetch("https://warden-backend.onrender.com/check-auth", {
-        method: "GET",
-        credentials: "include"
-    })
-    .then(res => {
-        if(res.status !== 200){
-            window.location.href = "/login";
+            const status = res.status;
+            
+            if(status !== 200){
+                window.location.href = "/login";
+            }
+        } catch(err) {
+            setIsError(true);
         }
-    })
+    }
+
+    useEffect(() => {
+      checkAuth();
+    }, [])
 
     async function handleUpload(e: any){
         const file = await processImage(e.target.files[0]);
@@ -70,7 +83,7 @@ const Settings: React.FC = () => {
       };
 
     function submitChanges(){
-      console.log(fileData);
+      try{
         if(fileData){
             const formData = new FormData();
             formData.append("imageData", fileData)
@@ -86,23 +99,31 @@ const Settings: React.FC = () => {
             })
 
         }
+      } catch(err) {
+          setIsError(true);
+      }
     }
 
     function submitIncome(e: any){
       const amount = e.target.income.value;
-
-      fetch("https://warden-backend.onrender.com/max-budget", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({amount: amount})
-      }).catch(err => console.log(err))
+      try{
+        fetch("https://warden-backend.onrender.com/max-budget", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({amount: amount})
+        })
+      } catch(err) {
+        setIsError(true);
+      }
     }
 
-
-    return(<div className="settings-container">
+    if(isError){
+        return(<Error number="500" message="Error Contacting the Server Try Again"/>);
+    }
+    else return(<div className="settings-container">
       <div className="settings-div">
         <p className="settings-title">Account Settings</p>
           <div className="settings-form">

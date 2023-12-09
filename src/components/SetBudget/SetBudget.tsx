@@ -3,30 +3,25 @@ import "./SetBudget.css";
 
 const SetBudget: React.FC = () =>{
 
-    const [currentData, setCurrentData] = useState([]);
+    const [currentData, setCurrentData] = useState([0, 0, 0, 0, 0, 0, 0]);
 
-    fetch("https://warden-backend.onrender.com/check-auth",{
-        method:"get",
-        credentials: "include"
-    })
-    .then(res => {
-        if(res.status !== 200){
-            window.location.href= "/login";
-        }
-    })
-
-    useEffect(()=>{
-        async function getBudgets(){
+    async function getBudgets(){
+        try{
             const res = await fetch("https://warden-backend.onrender.com/get-budgets",{
-            method: "GET",
-            credentials: "include"});
+                method: "GET",
+                credentials: "include"});
 
             const data = await res.json();
 
             if(data){
                 setCurrentData(data);
             }
+        } catch {
+            
         }
+    }
+
+    useEffect(()=>{
         getBudgets();
     }, [])
 

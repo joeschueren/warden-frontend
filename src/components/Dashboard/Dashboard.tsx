@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import Transaction from "./Transaction/Transaction";
 import Profile from "./Profile/Profile";
 import YearGraph from "./YearGraph/YearGraph";
+import Error from "../Error/Error";
 import "./Dashboard.css";
 
 interface DashProps {
@@ -37,19 +38,24 @@ const Dashboard: React.FC<DashProps> = (props) =>{
     }
 
     const [dashData, setDashData] = useState<DashData>({date: "", monthData: [], budgetData: [], maxBudget: 0, pastMonths: [], image: new Blob()});
+    const [isError, setIsError] = useState(false);
 
     async function getData() {
-        await fetch("https://warden-backend.onrender.com/dashboard", {
-            method: "GET",
-            credentials: "include"
-        })
-        .then(res => {
-            if(res.status !== 200){
-                window.location.href = "/login";
-            }
-            return res.json();
-        })
-        .then(data => setDashData(data));
+        try{
+            await fetch("https://warden-backend.onrender.com/dashboard", {
+                method: "GET",
+                credentials: "include"
+            })
+            .then(res => {
+                if(res.status !== 200){
+                    window.location.href = "/login";
+                }
+                return res.json();
+            })
+            .then(data => setDashData(data));
+        } catch(err) {
+            setIsError(true);
+        }
     }
 
     useEffect(() => {
@@ -93,8 +99,10 @@ const Dashboard: React.FC<DashProps> = (props) =>{
 
     console.log(dataSum);
 
-    
-    return(<div>
+    if(isError){
+        return(<Error number="500" message="Error Contacting the Server Try Again"/>)
+    }
+    else return( <div>
     <div className="dashboard-container">
         <div className="dashboard">
             <div className="form-row">

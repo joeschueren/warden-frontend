@@ -7,7 +7,7 @@ import Login from "./Login/Login";
 import Dashboard from "./Dashboard/Dashboard";
 import Demo from "./Demo/Demo";
 import Settings from "./Settings/Settings";
-import NotFound from "./NotFound/NotFound";
+import Error from "./Error/Error";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 inject();
@@ -17,22 +17,26 @@ function App() {
   const [username, setUsername] = useState(undefined);
   const [picture, setPicture] = useState(undefined);
 
-  useEffect(() => {
-    async function checkAuth(){
+  const checkAuth = async () => {
+    try{
       const res = await fetch("https://warden-backend.onrender.com/check-auth",{
           method: "GET",
           credentials: "include"
       })
       
-      const status = await res.status;
+      const status = res.status;
       const data = await res.json();
 
       if(status === 200){
         setUsername(data.email);
         setPicture(data.picture)
       }
+    } catch(err) {
+      
     }
-    
+  }
+
+  useEffect(() => {
     checkAuth()
   },[])
 
@@ -48,7 +52,7 @@ function App() {
           <Route path="/dashboard" Component={() => <Dashboard email={username}/>}/>
           <Route path="/settings" Component={Settings}/>
           <Route path="/demo" Component={Demo}/>
-          <Route path="*" Component={NotFound}/>
+          <Route path="*" Component={() => <Error number="404" message="Page Not Found"/>}/>
         </Routes>
       </Router>
     </div>
