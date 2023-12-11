@@ -8,7 +8,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import Demo from "./Demo/Demo";
 import Settings from "./Settings/Settings";
 import Error from "./Error/Error";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 
 inject();
 
@@ -16,6 +16,7 @@ function App() {
 
   const [username, setUsername] = useState(undefined);
   const [picture, setPicture] = useState(undefined);
+  const [isAuth, setIsAuth] = useState(false);
 
   const checkAuth = async () => {
     try{
@@ -29,10 +30,11 @@ function App() {
 
       if(status === 200){
         setUsername(data.email);
-        setPicture(data.picture)
+        setPicture(data.picture);
+        setIsAuth(true);
       }
     } catch(err) {
-      
+
     }
   }
 
@@ -49,9 +51,9 @@ function App() {
           <Route path="/" Component={Home}/>
           <Route path="/register" Component={Register}/>
           <Route path="/login" Component={Login}/>
-          <Route path="/dashboard" Component={() => <Dashboard email={username}/>}/>
-          <Route path="/settings" Component={Settings}/>
-          <Route path="/demo" Component={Demo}/>
+          <Route path="/dashboard" Component={() => isAuth ? <Dashboard email={username} /> : <Navigate to="/login"/>}/>
+          <Route path="/settings" Component={() => isAuth ? <Settings/> : <Navigate to="/login"/>}/>
+          <Route path="/demo" Component={() => isAuth ? <Demo/> : <Navigate to="/login"/>}/>
           <Route path="*" Component={() => <Error number="404" message="Page Not Found"/>}/>
         </Routes>
       </Router>
