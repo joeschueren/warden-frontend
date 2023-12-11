@@ -12,7 +12,7 @@ const Landing: React.FC = () => {
                         Monitor, plan, and fine tune your finances.
                     </p>
                     <a className="link-highlight" href="/register">Free Sign Up</a>
-                    <a className="secondary-anchor" href="/book">Book a Demo</a>
+                    <a className="secondary-anchor" href="/demo">Book a Demo</a>
                 </div>
                 <div className="image-container">
                     <img className="landing-image" src="landing-image.svg" alt="finance diagram webpage"></img>
