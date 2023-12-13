@@ -53,7 +53,7 @@ function App() {
           <Route path="/login" Component={Login}/>
           <Route path="/dashboard" Component={() => isAuth ? <Dashboard email={username} /> : <Navigate to="/login"/>}/>
           <Route path="/settings" Component={() => isAuth ? <Settings/> : <Navigate to="/login"/>}/>
-          <Route path="/demo" Component={() => isAuth ? <Demo/> : <Navigate to="/login"/>}/>
+          <Route path="/demo" Component={Demo}/>
           <Route path="*" Component={() => <Error number="404" message="Page Not Found"/>}/>
         </Routes>
       </Router>
