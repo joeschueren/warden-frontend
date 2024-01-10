@@ -48,7 +48,12 @@ function App() {
   },[])
 
   if((location.pathname === "/dashboard" || location.pathname === "/settings") && isAuth === undefined){
-      <Error number=". . ." message="Please Wait"/>
+      return(
+        <div>
+          <Navbar user={username} image={picture}/>
+          <Error number=". . ." message="Please Wait"/>
+        </div>
+      );
   }
   else return (
     <div>
