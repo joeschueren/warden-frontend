@@ -8,13 +8,13 @@ import Dashboard from "./Dashboard/Dashboard";
 import Demo from "./Demo/Demo";
 import Settings from "./Settings/Settings";
 import Error from "./Error/Error";
-import {BrowserRouter as Router, Routes, Route, Navigate, useLocation} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 
 inject();
 
 function App() {
 
-  const location = useLocation();
+  const location = window.location;
 
   const [username, setUsername] = useState(undefined);
   const [picture, setPicture] = useState(undefined);
