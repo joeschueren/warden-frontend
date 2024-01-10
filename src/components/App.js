@@ -8,15 +8,17 @@ import Dashboard from "./Dashboard/Dashboard";
 import Demo from "./Demo/Demo";
 import Settings from "./Settings/Settings";
 import Error from "./Error/Error";
-import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate, useLocation} from "react-router-dom";
 
 inject();
 
 function App() {
 
+  const location = useLocation();
+
   const [username, setUsername] = useState(undefined);
   const [picture, setPicture] = useState(undefined);
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(undefined);
 
   const checkAuth = async () => {
     try{
@@ -33,6 +35,9 @@ function App() {
         setPicture(data.picture);
         setIsAuth(true);
       }
+      else{
+        setIsAuth(false);
+      }
     } catch(err) {
 
     }
@@ -42,8 +47,10 @@ function App() {
     checkAuth()
   },[])
 
-
-  return (
+  if((location.pathname === "/dashboard" || location.pathname === "/settings") && isAuth === undefined){
+      <Error number=". . ." message="Please Wait"/>
+  }
+  else return (
     <div>
       <Router>
       <Navbar user={username} image={picture}/>
