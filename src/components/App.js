@@ -1,5 +1,5 @@
 import Navbar from "./Navbar/Navbar";
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 import { inject } from '@vercel/analytics';
 import Home from "./Home/Home";
 import Register from "./Register/Register";

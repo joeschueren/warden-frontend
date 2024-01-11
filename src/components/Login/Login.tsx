@@ -1,8 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Login.css";
 
 const Login: React.FC = () => {
     const [message, setMessage]: [string, Function] = useState("\u00A0");
+
+    useEffect(() => {
+        document.title = "Login";
+    })
 
     async function handleSubmit(event: any){ 
         event.preventDefault();

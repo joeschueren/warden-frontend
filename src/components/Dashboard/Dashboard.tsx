@@ -59,6 +59,7 @@ const Dashboard: React.FC<DashProps> = (props) =>{
     }
 
     useEffect(() => {
+        document.title = "Dashboard";
         if(dashData.monthData.length === 0 || dashData.budgetData.length === 0){
             getData();
         }

@@ -27,6 +27,7 @@ const Settings: React.FC = () => {
     }
 
     useEffect(() => {
+      document.title = "Settings";
       checkAuth();
     }, [])
 

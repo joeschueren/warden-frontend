@@ -24,6 +24,9 @@
     font-size: 1rem;
     font-weight: 600;
     color: #f52020;
+    background-color: white;
+    border: 0px;
+    box-shadow: 0px;
 }
 
 .logout:hover{

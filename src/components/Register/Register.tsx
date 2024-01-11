@@ -1,8 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Register.css";
 
 const Register: React.FC = () => {
     const [message, setMessage]: [string, Function] = useState("\u00A0");
+
+    useEffect(() => {
+        document.title = "Register";
+    })
 
     async function handleSubmit(event: any){ 
         event.preventDefault();

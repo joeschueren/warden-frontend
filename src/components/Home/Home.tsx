@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Landing from "../Landing/Landing";
 import Overview from "../Overview/Overview";
 import Booking from "../Booking/Booking";
@@ -7,6 +7,10 @@ import Footer from "../Footer/Footer";
 
 
 const Home: React.FC = () => {
+
+    useEffect(() => {
+        document.title = "Warden Finance";
+    }, []);
     return(<div>
         <Landing/>
         <Overview/>
