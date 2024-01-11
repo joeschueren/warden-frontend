@@ -11,7 +11,7 @@ const Settings: React.FC = () => {
     
     async function checkAuth(){
         try{
-            const res = await fetch("https://warden-backend.onrender.com/check-auth", {
+            const res = await fetch("https://season-best-yoke.glitch.me/check-auth", {
                 method: "GET",
                 credentials: "include"
             })
@@ -87,7 +87,7 @@ const Settings: React.FC = () => {
         if(fileData){
             const formData = new FormData();
             formData.append("imageData", fileData)
-            fetch("https://warden-backend.onrender.com/upload-picture", {
+            fetch("https://season-best-yoke.glitch.me/upload-picture", {
                 method: "POST",
                 credentials: "include",
                 body: formData
@@ -107,7 +107,7 @@ const Settings: React.FC = () => {
     function submitIncome(e: any){
       const amount = e.target.income.value;
       try{
-        fetch("https://warden-backend.onrender.com/max-budget", {
+        fetch("https://season-best-yoke.glitch.me/max-budget", {
           method: "POST",
           credentials: "include",
           headers: {

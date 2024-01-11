@@ -42,7 +42,7 @@ const Dashboard: React.FC<DashProps> = (props) =>{
 
     async function getData() {
         try{
-            const res = await fetch("https://warden-backend.onrender.com/dashboard", {
+            const res = await fetch("https://season-best-yoke.glitch.me/dashboard", {
                 method: "GET",
                 credentials: "include"
             });

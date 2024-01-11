@@ -12,7 +12,7 @@ const Login: React.FC = () => {
         const password:string = event.target.password.value;
 
         try{
-            await fetch("https://warden-backend.onrender.com/login",{
+            await fetch("https://season-best-yoke.glitch.me/login",{
             method: "POST",
             credentials: "include",
             headers: {

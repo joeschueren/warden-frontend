@@ -24,7 +24,7 @@ interface ProfileProps {
 const Profile: React.FC<ProfileProps> = (props) => {
 
     async function handleLogout(){
-        const res = await fetch("https://warden-backend.onrender.com/logout",{
+        const res = await fetch("https://season-best-yoke.glitch.me/logout",{
             method: "GET",
             credentials: "include"
         })

@@ -7,7 +7,7 @@ interface TransactionProps {
 
 const Transaction: React.FC<TransactionProps> = (props) =>{
 
-    fetch("https://warden-backend.onrender.com/check-auth",{
+    fetch("https://season-best-yoke.glitch.me/check-auth",{
         method:"get",
         credentials: "include"
     })
@@ -23,7 +23,7 @@ const Transaction: React.FC<TransactionProps> = (props) =>{
         const category = event.target.category.value;
         const amount = event.target.amount.value;
 
-        fetch("https://warden-backend.onrender.com/transaction",{
+        fetch("https://season-best-yoke.glitch.me/transaction",{
             method: "POST",
             credentials: "include",
             headers: {

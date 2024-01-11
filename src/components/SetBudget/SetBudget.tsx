@@ -7,7 +7,7 @@ const SetBudget: React.FC = () =>{
 
     async function getBudgets(){
         try{
-            const res = await fetch("https://warden-backend.onrender.com/get-budgets",{
+            const res = await fetch("https://season-best-yoke.glitch.me/get-budgets",{
                 method: "GET",
                 credentials: "include"});
 
@@ -38,7 +38,7 @@ const SetBudget: React.FC = () =>{
         const shopping = e.shopping.value;
         const other = e.other.value;
 
-        await fetch("https://warden-backend.onrender.com/set-budget",{
+        await fetch("https://season-best-yoke.glitch.me/set-budget",{
             method: "POST",
             credentials: "include",
             headers: {

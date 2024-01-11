@@ -22,7 +22,7 @@ function App() {
 
   const checkAuth = async () => {
     try{
-      const res = await fetch("https://warden-backend.onrender.com/check-auth",{
+      const res = await fetch("https://season-best-yoke.glitch.me/check-auth",{
           method: "GET",
           credentials: "include"
       })

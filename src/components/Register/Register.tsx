@@ -14,7 +14,7 @@ const Register: React.FC = () => {
 
         if(password === confirm){
             try{
-                await fetch("https://warden-backend.onrender.com/register",{
+                await fetch("https://season-best-yoke.glitch.me/register",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
