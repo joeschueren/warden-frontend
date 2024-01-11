@@ -130,7 +130,7 @@ const Settings: React.FC = () => {
             <div className="profile-update">
               <div className="picture-container">
                 <p className="settings-header income-header">Update Picture</p>
-                {fileData ? <img className="demo-picture" src={URL.createObjectURL(fileData)} alt="Processed Image" /> : <div className="no-image demo-picture"></div>}
+                {fileData ? <img className="demo-picture" src={URL.createObjectURL(fileData)} alt="User Submitted" /> : <div className="no-image demo-picture"></div>}
                 <input className="file-input" type="file" onChange={handleUpload} name="picture"></input>
                 <button className="confirm-button" onClick={submitChanges}>Save Changes</button>
               </div>

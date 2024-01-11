@@ -40,7 +40,6 @@ const Profile: React.FC<ProfileProps> = (props) => {
 
     for(let i = 0; i< pastMonths.length; i++){
         const current = pastMonths[i];
-        const month = parseInt(current.year_month.substring(5));
         
         const expenses = Object.values(pastMonths[i])
         .map(value => parseFloat(value));
@@ -65,11 +64,11 @@ const Profile: React.FC<ProfileProps> = (props) => {
 
     return(
         <div className="profile-container">
-            <img className="profile-picture" src={blob ? URL.createObjectURL(blob) : "profile.svg"}></img>
+            <img className="profile-picture" alt="User" src={blob ? URL.createObjectURL(blob) : "profile.svg"}></img>
             <p>{props.email}</p>
             <span>Total Saved: ${total.toFixed(2)}</span>
             <a className="settings" href="/settings">Account Settings</a>
-            <a href="#" className="logout" onClick={handleLogout}>Logout</a>
+            <button className="logout" onClick={handleLogout}>Logout</button>
         </div>)
 
 }

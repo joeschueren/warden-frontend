@@ -53,7 +53,7 @@ const Register: React.FC = () => {
         <div className="form-container">
             <div className="auth-header">
                 <span data-testid="logo" className="header-text">warden</span>
-                <img className="logo" src="logo.png"></img>
+                <img className="logo" alt="Company Logo" src="logo.png"></img>
             </div>
             <span className="welcome">Welcome to Warden</span>
             <p>Already have an account? <a className="switch-form" href="/login">Login</a></p>

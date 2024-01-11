@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
     if(props.image){
         const uint8Array = new Uint8Array(props.image.data);
         const blob = new Blob([uint8Array], { type: "buffer" });
-        picture = (<img className="profile-pic"src={URL.createObjectURL(blob)}/>)
+        picture = (<img className="profile-pic" alt="User Profile" src={URL.createObjectURL(blob)}/>)
     }
 
 
@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
                 <div className="nav-title">
                     <a href="/" className="nav-title">
                         <span data-testid="title" className="title-text">warden</span>
-                        <img className="logo" src="logo.png"></img>
+                        <img className="logo" alt="Compny Logo" src="logo.png"></img>
                     </a>
                     <div className="toggle-button">
                         <i className="fa-solid fa-bars fa-lg" onClick={handleToggle}></i>
@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
                     <a className="nav-link" href="/dashboard">About</a>
                     <a className="nav-link" href="/dashboard">Pricing</a>
                     <a className="nav-link" href="/dashboard">Showcase</a>
-                    <a className="nav-link" href="/dashboard">Book an Appointment</a>
+                    <a className="nav-link" href="/dashboard">{ email ? "Dashboard" : "Book an Appointment"}</a>
                     {
                         email ? (
                         <div className="nav-email">

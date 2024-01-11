@@ -46,7 +46,7 @@ const Login: React.FC = () => {
         <div className="form-container">
             <div className="auth-header">
                 <span data-testid="logo" className="header-text">warden</span>
-                <img className="logo" src="logo.png"></img>
+                <img className="logo" alt="Comapny Logo" src="logo.png"></img>
             </div>
             <span className="welcome">Welcome Back to Warden</span>
             <p>Don't have an account? <a className="switch-form" href="/register">Register</a></p>
