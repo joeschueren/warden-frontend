@@ -16,13 +16,17 @@ function App() {
 
   const location = window.location;
 
+  const url = (process.env.NODE_ENV === "production" ?
+   "https://season-best-yoke.glitch.me":
+   "http://localhost:5000");
+
   const [username, setUsername] = useState(undefined);
   const [picture, setPicture] = useState(undefined);
   const [isAuth, setIsAuth] = useState(undefined);
 
   const checkAuth = async () => {
     try{
-      const res = await fetch("https://season-best-yoke.glitch.me/check-auth",{
+      const res = await fetch(url+"/check-auth",{
           method: "GET",
           credentials: "include"
       })

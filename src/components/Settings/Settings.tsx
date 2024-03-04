@@ -8,10 +8,14 @@ const Settings: React.FC = () => {
 
     const [fileData, setFileData]: [Blob | null, any] = useState(null);
     const [isError, setIsError] = useState(false);
+
+    const url = (process.env.NODE_ENV === "production" ?
+    "https://season-best-yoke.glitch.me":
+    "http://localhost:5000");
     
     async function checkAuth(){
         try{
-            const res = await fetch("https://season-best-yoke.glitch.me/check-auth", {
+            const res = await fetch(url+"/check-auth", {
                 method: "GET",
                 credentials: "include"
             })
@@ -88,7 +92,7 @@ const Settings: React.FC = () => {
         if(fileData){
             const formData = new FormData();
             formData.append("imageData", fileData)
-            fetch("https://season-best-yoke.glitch.me/upload-picture", {
+            fetch(url+"/upload-picture", {
                 method: "POST",
                 credentials: "include",
                 body: formData
@@ -108,7 +112,7 @@ const Settings: React.FC = () => {
     function submitIncome(e: any){
       const amount = e.target.income.value;
       try{
-        fetch("https://season-best-yoke.glitch.me/max-budget", {
+        fetch(url+"/max-budget", {
           method: "POST",
           credentials: "include",
           headers: {

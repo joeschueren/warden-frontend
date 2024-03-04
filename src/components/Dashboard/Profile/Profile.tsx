@@ -23,8 +23,12 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = (props) => {
 
+    const url = (process.env.NODE_ENV === "production" ?
+   "https://season-best-yoke.glitch.me":
+   "http://localhost:5000");
+
     async function handleLogout(){
-        const res = await fetch("https://season-best-yoke.glitch.me/logout",{
+        const res = await fetch(url+"/logout",{
             method: "GET",
             credentials: "include"
         })

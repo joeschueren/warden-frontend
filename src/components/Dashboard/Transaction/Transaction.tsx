@@ -7,7 +7,11 @@ interface TransactionProps {
 
 const Transaction: React.FC<TransactionProps> = (props) =>{
 
-    fetch("https://season-best-yoke.glitch.me/check-auth",{
+    const url = (process.env.NODE_ENV === "production" ?
+    "https://season-best-yoke.glitch.me":
+    "http://localhost:5000");
+
+    fetch(url+"/check-auth",{
         method:"get",
         credentials: "include"
     })
@@ -23,7 +27,7 @@ const Transaction: React.FC<TransactionProps> = (props) =>{
         const category = event.target.category.value;
         const amount = event.target.amount.value;
 
-        fetch("https://season-best-yoke.glitch.me/transaction",{
+        fetch(url+"/transaction",{
             method: "POST",
             credentials: "include",
             headers: {
@@ -45,7 +49,7 @@ const Transaction: React.FC<TransactionProps> = (props) =>{
                 <p className="income-text hidden-text">Add a transaction to your account.</p>
                 <p className="select-title">Select a Category:</p>
                 <select className="category" title="Category" name="category">
-                    <option value="0">Food & Drink</option>
+                    <option value="0">Food & Dining</option>
                     <option value="1">Bills & Utilities</option>
                     <option value="2">Entertainment</option>
                     <option value="3">Transportation</option>

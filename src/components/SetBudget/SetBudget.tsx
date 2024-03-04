@@ -5,9 +5,13 @@ const SetBudget: React.FC = () =>{
 
     const [currentData, setCurrentData] = useState([0, 0, 0, 0, 0, 0, 0]);
 
+    const url = (process.env.NODE_ENV === "production" ?
+   "https://season-best-yoke.glitch.me":
+   "http://localhost:5000");
+
     async function getBudgets(){
         try{
-            const res = await fetch("https://season-best-yoke.glitch.me/get-budgets",{
+            const res = await fetch(url+"/get-budgets",{
                 method: "GET",
                 credentials: "include"});
 
@@ -38,7 +42,7 @@ const SetBudget: React.FC = () =>{
         const shopping = e.shopping.value;
         const other = e.other.value;
 
-        await fetch("https://season-best-yoke.glitch.me/set-budget",{
+        await fetch(url+"/set-budget",{
             method: "POST",
             credentials: "include",
             headers: {

@@ -4,6 +4,10 @@ import "./Login.css";
 const Login: React.FC = () => {
     const [message, setMessage]: [string, Function] = useState("\u00A0");
 
+    const url = (process.env.NODE_ENV === "production" ?
+   "https://season-best-yoke.glitch.me":
+   "http://localhost:5000");
+
     useEffect(() => {
         document.title = "Login";
     })
@@ -16,7 +20,7 @@ const Login: React.FC = () => {
         const password:string = event.target.password.value;
 
         try{
-            await fetch("https://season-best-yoke.glitch.me/login",{
+            await fetch(url+"/login",{
             method: "POST",
             credentials: "include",
             headers: {

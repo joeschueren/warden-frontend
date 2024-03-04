@@ -40,9 +40,13 @@ const Dashboard: React.FC<DashProps> = (props) =>{
     const [dashData, setDashData] = useState<DashData>({date: "", monthData: [], budgetData: [], maxBudget: 0, pastMonths: [], image: new Blob()});
     const [isError, setIsError] = useState(false);
 
+    const url = (process.env.NODE_ENV === "production" ?
+   "https://season-best-yoke.glitch.me":
+   "http://localhost:5000");
+
     async function getData() {
         try{
-            const res = await fetch("https://season-best-yoke.glitch.me/dashboard", {
+            const res = await fetch(url+"/dashboard", {
                 method: "GET",
                 credentials: "include"
             });

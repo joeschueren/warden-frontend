@@ -4,6 +4,10 @@ import "./Register.css";
 const Register: React.FC = () => {
     const [message, setMessage]: [string, Function] = useState("\u00A0");
 
+    const url = (process.env.NODE_ENV === "production" ?
+   "https://season-best-yoke.glitch.me":
+   "http://localhost:5000");
+
     useEffect(() => {
         document.title = "Register";
     })
@@ -18,7 +22,7 @@ const Register: React.FC = () => {
 
         if(password === confirm){
             try{
-                await fetch("https://season-best-yoke.glitch.me/register",{
+                await fetch(url+"/register",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
